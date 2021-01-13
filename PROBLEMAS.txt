@@ -1,4 +1,0 @@
-triplicado valores pero no iguales en unemp
-
-
-importar csv_reader

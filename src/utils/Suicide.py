@@ -5,7 +5,7 @@ import plotly.express as px
 import plotly.graph_objs as go
 import psutil
 import plotly.io as pio
-from utils.mining_data_tb import *
+from mining_data_tb import *
 
 suicide = pd.read_csv("C:\\DATA_SCIENCE\\PROYECTO\\documentation\\who_suicide_statistics.csv")
 unemployment = pd.read_csv("C:\\DATA_SCIENCE\\PROYECTO\\documentation\\unemployment_all_ratio.csv")

@@ -5,7 +5,7 @@ import plotly.express as px
 import plotly.graph_objs as go
 import psutil
 import plotly.io as pio
-from utils.mining_data_tb import *
+from mining_data_tb import *
 
 suicide = pd.read_csv("C:\\DATA_SCIENCE\\PROYECTO\\documentation\\who_suicide_statistics.csv")
 unemployment = pd.read_csv("C:\\DATA_SCIENCE\\PROYECTO\\documentation\\unemployment_all_ratio.csv")
@@ -32,6 +32,7 @@ unemp.loc[unemp['gender'] == "WOMEN", 'gender'] = "female"
 unemp['age'] = unemp['age'].str.replace(' to ', '-')                                             #normalising "age" column formats
 
 unemp = unemp[(unemp['age'] == '15-24') | (unemp['age'] == '25-34') |(unemp['age'] == '35-44') |(unemp['age'] == '45-54') | (unemp['age'] == '55-64') |(unemp['age'] == '65-69') | (unemp['age'] == '70-74')]
+
 unemp.loc[(unemp["age"] == '35-44') | (unemp["age"] == '45-54'), 'age'] = '35-54'
 unemp.loc[(unemp["age"] == '55-64') | (unemp["age"] == '65-69') | (unemp["age"] == '70-74'), 'age'] = "55-74"
 
@@ -57,3 +58,5 @@ nw_un = unemp_pivot_mean.loc["Norway"]
 sa_un = unemp_pivot_mean.loc["South Africa"]
 
 unemp_age_group = unemp.groupby(['gender']).mean().round(2)
+
+print(unemp.columns)
